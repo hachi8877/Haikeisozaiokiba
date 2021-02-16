@@ -1,0 +1,2 @@
+class BackgroundComment < ApplicationRecord
+end
