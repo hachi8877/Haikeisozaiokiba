@@ -6,5 +6,7 @@ class User < ApplicationRecord
          
   has_many :background_images, dependent: :destroy
   has_many :background_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  attachment :profile_image
   
 end
