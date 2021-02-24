@@ -33,9 +33,11 @@ class BackgroundImagesController < ApplicationController
     end
   end
 
+
+  
    private
 
   def background_image_params
-    params.require(:background_image).permit(:shop_name, :image, :caption, :tag_list)
+    params.require(:background_image).permit(:shop_name, :image, :caption)
   end
 end
