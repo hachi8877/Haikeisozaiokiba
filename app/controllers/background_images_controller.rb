@@ -16,7 +16,9 @@ class BackgroundImagesController < ApplicationController
   def index
     @background_images = BackgroundImage.page(params[:page]).reverse_order
     @tags = BackgroundImage.tag_counts_on(:tags).most_used(20)
-
+    if params[:tag_name]
+      @background_images = BackgroundImage.tagged_with((params[:tag_name]))
+    end
   end
 
   def show
@@ -38,6 +40,6 @@ class BackgroundImagesController < ApplicationController
    private
 
   def background_image_params
-    params.require(:background_image).permit(:shop_name, :image, :caption)
+    params.require(:background_image).permit(:shop_name, :image, :caption, :tag_list)
   end
 end
