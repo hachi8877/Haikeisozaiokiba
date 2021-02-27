@@ -16,28 +16,41 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+ html {
  
+ }
  
+ body {
+ 
+ }
+
 .mb-auto{
-  font-family: cursive;
+  font-family:"Yu Gothic", "游ゴシック";
   background-image: image-url("tail4.jpg");
+  height: auto;
 }
 
+
 .card-columns {
- 
+
 }
 
 .card-title{
  font-family: serif;
- 
+
 }
 
 .card-text{
- font-family: sans-serif;
- 
+ font-family:"Yu Gothic", "游ゴシック";
+
 }
 
 .shadow-sm{
  background-size: cover;
  background-image: image-url("tail3.jpg");
+}
+
+.container{
+ font-family: 'Corben', cursive;
+ 
 }

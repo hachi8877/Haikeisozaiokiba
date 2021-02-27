@@ -13,10 +13,10 @@
         <div class="col-10">
           <p class="card-title">
             <%= link_to(background_image_path(background_image.id), class:"text-dark") do %>
-              <strong><i class="far fa-flag"></i><span> <%= background_image.shop_name %></span></strong>
+              <strong></i><span> <%= background_image.shop_name %></span></strong>
             <% end %>
           </p>
-          <p class="card-text">説明：<%= background_image.caption %></p>
+          <p class="card-text"><i class="far fa-comment"></i><%= background_image.caption %></p>
           <p class="card-text"><%= render 'background_images/tag_list', tag_list: background_image.tag_list %> </p>
           <span><i class="fas fa-user"></i> By <%= background_image.user.name %> ｜ </span>
           <span><%= link_to "#{background_image.background_comments.count} コメント", background_image_path(background_image.id), class:"text-dark" %></span>

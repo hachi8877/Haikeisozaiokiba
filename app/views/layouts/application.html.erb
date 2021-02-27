@@ -31,7 +31,10 @@
               <%= link_to 'マイページ', user_path(current_user.id), class: 'fas fa-users nav-link text-dark' %>
             </li>
             <li class="navbar-form">
-            <input type="text" class="form-control" placeholder="タグ">
+            <input type="text" class="form-control" placeholder="タグで検索">
+            </li>
+
+            <li class="navbar-button">
             <button type="submit" class="btn btn-info">検索</button>
             </li>
             <% else %>
@@ -47,9 +50,9 @@
         </div>
       </nav>
     </header>
-    <main class="mb-auto"　>
+    <main class="mb-auto">
     <%= yield %>
-    </main>
+    </div>
     <footer class="bg-dark text-white pt-5 pb-4">
       <div class="container">
         <div class="row no-gutters">
