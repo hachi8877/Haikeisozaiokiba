@@ -1,3 +1,6 @@
+<div class="containar">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
 <div class="background-body">
   <%= attachment_image_tag @background_image, :image %>
   <p>タイトル：<%= @background_image.shop_name %></p>
@@ -40,4 +43,7 @@
   <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
   <%= f.submit "送信する" %>
 <% end %>
+</div>
+</div>
+</div>
 </div>

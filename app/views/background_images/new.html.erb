@@ -1,7 +1,7 @@
 <div class="containar">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light p-4 mb-0">画像投稿フォーム</h5>
+      <h5 class="text-dark bg-secondary p-4 mb-0">画像投稿フォーム</h5>
       <div class="form-body p-4">
         <% if @background_image.errors.any? %>
           <%= @background_image.errors.count %>件のエラーが発生しました
@@ -21,7 +21,7 @@
           <hr>
           <%=  f.text_field :tag_list, value: @background_image.tag_list.join(','), class: "form-control", placeholder:"タグ" %>
           <hr>
-          <%= f.submit '投稿', class:"btn btn-lg btn-block btn-info mt-4" %>
+          <%= f.submit '投稿', class:"btn btn-lg btn-block btn-success mt-4" %>
         <% end %>
       </div>
     </div>

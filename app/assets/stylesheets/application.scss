@@ -16,3 +16,28 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+ 
+ 
+.mb-auto{
+  font-family: cursive;
+  background-image: image-url("tail4.jpg");
+}
+
+.card-columns {
+ 
+}
+
+.card-title{
+ font-family: serif;
+ 
+}
+
+.card-text{
+ font-family: sans-serif;
+ 
+}
+
+.shadow-sm{
+ background-size: cover;
+ background-image: image-url("tail3.jpg");
+}
