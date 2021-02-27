@@ -3,10 +3,10 @@
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
 <div class="background-body">
   <%= attachment_image_tag @background_image, :image %>
-  <p>タイトル：<%= @background_image.shop_name %></p>
-  <p>説明：<%= @background_image.caption %></p>
-  <p>ユーザーネーム：<%= @background_image.user.name %></p>
-  <p>投稿日時：<%= @background_image.created_at.strftime('%Y/%m/%d') %></p>
+  <p>title：<%= @background_image.shop_name %></p>
+  <p>Commentary：<%= @background_image.caption %></p>
+  <p>user_name：<%= @background_image.user.name %></p>
+  <p>date：<%= @background_image.created_at.strftime('%Y/%m/%d') %></p>
   <% if @background_image.user == current_user %>
     <%= link_to "削除", background_image_path(@background_image), method: :delete %>
   <% end %>
@@ -25,9 +25,11 @@
   <% end %>
 </div>
 
+
 <div class="comments">
 <p>コメント件数：<%= @background_image.background_comments.count %></p>
 <% @background_image.background_comments.each do |background_comment| %>
+<div class="card　border-success bg-light">
   <p><%= attachment_image_tag background_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
   <%= background_comment.user.name %>
   <%= background_comment.created_at.strftime('%Y/%m/%d') %><%= background_comment.comment %>
@@ -38,6 +40,7 @@
   <% end %>
 <% end %>
 </div>
+<div class="card　border-success bg-info">
 <div class="new-comment">
 <%= form_with(model:[@background_image, @background_comment], local: true) do |f| %>
   <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
