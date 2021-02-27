@@ -17,11 +17,11 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  html {
- 
+
  }
- 
+
  body {
- 
+
  }
 
 .mb-auto{
@@ -55,5 +55,10 @@
 }
 .background-body{
  font-family: 'Corben', cursive;
- 
+
+}
+
+
+.card {
+ background-image: image-url("note.jpg");
 }
