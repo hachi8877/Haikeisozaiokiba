@@ -29,7 +29,6 @@
 https://docs.google.com/spreadsheets/d/1ZCaJ6i50nmQn4mfMiJETkV3FM1N0Mb50j-go5eq9Tps/edit#gid=0
 
 ## 開発環境
-
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
