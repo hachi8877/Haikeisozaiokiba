@@ -1,52 +1,57 @@
 <div class="containar">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-<div class="background-body">
-  <%= attachment_image_tag @background_image, :image %>
-  <p>title：<%= @background_image.shop_name %></p>
-  <p>Commentary：<%= @background_image.caption %></p>
-  <p>user_name：<%= @background_image.user.name %></p>
-  <p>date：<%= @background_image.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @background_image.user == current_user %>
-    <%= link_to "削除", background_image_path(@background_image), method: :delete %>
-  <% end %>
-  <% if @background_image.favorited_by?(current_user) %>
-    <p>
-      <%= link_to background_image_favorites_path(@background_image), method: :delete do %>
-        ♥<%= @background_image.favorites.count %> いいね
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to background_image_favorites_path(@background_image), method: :post do %>
-        ♡<%= @background_image.favorites.count %> いいね
-      <% end %>
-    </p>
-  <% end %>
-</div>
-
-
-<div class="comments">
-<p>コメント件数：<%= @background_image.background_comments.count %></p>
-<% @background_image.background_comments.each do |background_comment| %>
-<div class="card　border-success bg-light">
-  <p><%= attachment_image_tag background_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
-  <%= background_comment.user.name %>
-  <%= background_comment.created_at.strftime('%Y/%m/%d') %><%= background_comment.comment %>
-  <% if background_comment.user == current_user %>
-  <div class="comment-delete">
-    <%= link_to "削除", background_image_background_comment_path(background_comment.background_image, background_comment), method: :delete %>
+        <div class="background-body">
+          <%= attachment_image_tag @background_image, :image %>
+          <p>title：<%= @background_image.shop_name %></p>
+          <p>Commentary：<%= @background_image.caption %></p>
+          <p>user_name：<%= @background_image.user.name %></p>
+          <p>date：<%= @background_image.created_at.strftime('%Y/%m/%d') %></p>
+          <% if @background_image.user == current_user %>
+            <%= link_to "削除", background_image_path(@background_image), method: :delete %>
+          <% end %>
+          <% if @background_image.favorited_by?(current_user) %>
+            <p>
+              <%= link_to background_image_favorites_path(@background_image), method: :delete do %>
+                ♥<%= @background_image.favorites.count %> いいね
+              <% end %>
+            </p>
+            <% else %>
+            <p>
+              <%= link_to background_image_favorites_path(@background_image), method: :post do %>
+                ♡<%= @background_image.favorites.count %> いいね
+              <% end %>
+            </p>
+          <% end %>
+        </div>
+        
+        
+          <div class="comments">
+          <p>コメント件数：<%= @background_image.background_comments.count %></p>
+          <% @background_image.background_comments.each do |background_comment| %>
+          <div class="card　border-success bg-light">
+            <p><%= attachment_image_tag background_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
+            <%= background_comment.user.name %>
+            <%= background_comment.created_at.strftime('%Y/%m/%d') %><%= background_comment.comment %>
+            <% if background_comment.user == current_user %>
+            <div class="comment-delete">
+              <%= link_to "削除", background_image_background_comment_path(background_comment.background_image, background_comment), method: :delete %>
+            </div>
+            <% end %>
+          <% end %>
+          </div>
+          <div class="card　border-success bg-info">
+          <div class="new-comment">
+          <%= form_with(model:[@background_image, @background_comment], local: true) do |f| %>
+            <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+            <%= f.submit "送信する" %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <% end %>
-<% end %>
 </div>
-<div class="card　border-success bg-info">
-<div class="new-comment">
-<%= form_with(model:[@background_image, @background_comment], local: true) do |f| %>
-  <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
-  <%= f.submit "送信する" %>
-<% end %>
-</div>
-</div>
-</div>
-</div>
+
+
+
