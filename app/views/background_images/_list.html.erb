@@ -1,6 +1,6 @@
 <div class="card-columns">
   <% background_images.each do |background_image| %>
-  <% pp background_image.tag_list %>
+  
   <div class="card  border-success bg-success width="100%" height="160" mx-auto　mt-4 shadow-lg">
     <%= link_to background_image_path(background_image.id) do %>
       <%= attachment_image_tag background_image, :image, class:"card-img-top"; %>
