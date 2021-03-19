@@ -10,10 +10,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="d-flex flex-column vh-100">
+  <body class="d-flex flex-column vh-100 ">
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-light" >
-        <div class="container">
+        <div class="container" >
           <a class="navbar-brand p-3" href="/"><%= image_tag('logo3.png') %></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
     <%= yield %>
     </div>
     <footer class="bg-dark text-white pt-5 pb-4">
-      <div class="container">
+      <div class="container-footer">
         <div class="row no-gutters">
           <div class="col-md-4">
             <p>気楽に投稿しよう！</p>
