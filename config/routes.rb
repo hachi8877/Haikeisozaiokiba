@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :background_comments, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update]
-  
+
 end
