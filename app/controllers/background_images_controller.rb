@@ -29,9 +29,9 @@ class BackgroundImagesController < ApplicationController
 
   def destroy
     def destroy
-    @background_image = BackgroundImage.find(params[:id])
-    @background_image.destroy
-    redirect_to background_images_path
+    　@background_image = BackgroundImage.find(params[:id])
+    　@background_image.destroy
+    　redirect_to background_images_path
     end
   end
 
